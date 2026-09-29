@@ -6,7 +6,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 1. БАЗОВЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (MOBILE FIRST) */
+/* ==========================================================================
+   1. БАЗОВЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (MOBILE FIRST)
+   ========================================================================== */
 
 body {
     margin: 0;
@@ -22,7 +24,7 @@ body {
     padding: 0 15px;
 }
 
-/* Шапка и Навигация на мобильных */
+/* Шапка сайта */
 .site-header {
     width: 100%;
     background: linear-gradient(135deg, #0b1f4d, #24104f);
@@ -30,24 +32,24 @@ body {
 
 .header-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Логотип слева, название справа */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 15px 0;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logo {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
 }
 
 .site-header h1 {
     margin: 0;
-    font-size: 24px;
-    text-align: center;
+    font-size: 22px;
+    text-align: left;
 }
 
 /* Меню на мобильном: вертикальный список во всю ширину */
@@ -73,6 +75,10 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.site-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 /* Контентная область */
 main.container {
     background: white;
@@ -88,11 +94,11 @@ main.container {
 }
 
 .section-table {
-    order: 1; /* Таблица визуально ПЕРВАЯ на мобильных */
+    order: 1; /* Таблица визуально ВЫШЕ списка ссылок на мобильных */
 }
 
 .section-links {
-    order: 2; /* Список ссылок визуально ВТОРОЙ на мобильных */
+    order: 2; /* Список ссылок визуально НИЖЕ таблицы на мобильных */
 }
 
 .section-form {
@@ -103,7 +109,7 @@ main.container {
     order: 4;
 }
 
-/* Общие стили секций и таблиц */
+/* Общие стили секций */
 section {
     margin-bottom: 30px;
 }
@@ -122,6 +128,7 @@ a:hover {
     color: #d00;
 }
 
+/* Элементы формы */
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -162,6 +169,7 @@ button:hover {
     background: #d5d5d5;
 }
 
+/* Таблица */
 .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -198,6 +206,7 @@ button:hover {
     text-align: right;
 }
 
+/* Футер */
 .site-footer {
     width: 100%;
     background: #333;
@@ -215,7 +224,9 @@ button:hover {
     margin: 0;
 }
 
-/* 2. МЕДИА-ЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ И ДЕСКТОПОВ (MEDIA QUERY) */
+/* ==========================================================================
+   2. МЕДИА-ЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ И ДЕСКТОПОВ (MEDIA QUERY)
+   ========================================================================== */
 
 @media (min-width: 768px) {
     .container {
@@ -223,10 +234,8 @@ button:hover {
         padding: 0 20px;
     }
 
-    /* Шапка горизонтальная */
+    /* Шапка на десктопе */
     .header-inner {
-        flex-direction: row;
-        justify-content: flex-start;
         min-height: 130px;
         gap: 25px;
     }
@@ -238,10 +247,9 @@ button:hover {
 
     .site-header h1 {
         font-size: 32px;
-        text-align: left;
     }
 
-    /* Навигация горизонтальная */
+    /* Навигация на десктопе: горизонтальная */
     .nav-inner {
         flex-direction: row;
         justify-content: center;
@@ -253,17 +261,13 @@ button:hover {
         border-top: none;
     }
 
-    .site-nav a:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Возвращаем стандартный порядок элементов (как в HTML) */
+    /* Порядок элементов на десктопе: как в HTML-потоке */
     .section-links {
-        order: 1; /* Список ссылок ПЕРВЫЙ на десктопе */
+        order: 1; /* Список ссылок ПЕРВЫЙ */
     }
 
     .section-table {
-        order: 2; /* Таблица ВТОРАЯ на десктопе */
+        order: 2; /* Таблица ВТОРАЯ */
     }
 
     input[type="text"],
