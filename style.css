@@ -52,7 +52,7 @@ body {
     text-align: left;
 }
 
-/* Меню на мобильном */
+/* Меню на мобильном: вертикальное */
 .site-nav {
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
@@ -79,10 +79,10 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Порядок КНОПОК МЕНЮ на мобильном (Таблица первая) */
-.nav-table { order: 1; }
-.nav-links { order: 2; }
-.nav-form  { order: 3; }
+/* Порядок пунктов МЕНЮ на МОБИЛЬНОМ */
+.nav-table { order: 1; } /* Таблица первая */
+.nav-links { order: 2; } /* Список ссылок второй */
+.nav-form  { order: 3; } /* Форма третья */
 
 /* Контентная область */
 main.container {
@@ -92,18 +92,18 @@ main.container {
     padding-bottom: 30px;
 }
 
-/* Flexbox порядок БЛОКОВ на мобильных */
+/* Flexbox порядок БЛОКОВ КОНТЕНТА на МОБИЛЬНОМ */
 .content-wrapper {
     display: flex;
     flex-direction: column;
 }
 
 .section-table {
-    order: 1; /* Таблица ВЫШЕ списка ссылок на мобильных */
+    order: 1; /* Таблица ВЫШЕ списка ссылок */
 }
 
 .section-links {
-    order: 2; /* Список ссылок НИЖЕ таблицы на мобильных */
+    order: 2; /* Список ссылок НИЖЕ таблицы */
 }
 
 .section-form {
@@ -239,7 +239,7 @@ button:hover {
         padding: 0 20px;
     }
 
-    /* Шапка на десктопе */
+    /* Шапка на ПК */
     .header-inner {
         min-height: 130px;
         gap: 25px;
@@ -254,7 +254,7 @@ button:hover {
         font-size: 32px;
     }
 
-    /* Навигация на десктопе: горизонтальная */
+    /* Навигация на ПК: горизонтальная */
     .nav-inner {
         flex-direction: row;
         justify-content: center;
@@ -266,14 +266,14 @@ button:hover {
         border-top: none;
     }
 
-    /* Порядок КНОПОК МЕНЮ на ПК (Ссылки первые) */
-    .nav-links { order: 1; }
-    .nav-table { order: 2; }
-    .nav-form  { order: 3; }
+    /* Порядок пунктов МЕНЮ на ПК */
+    .nav-links { order: 1; } /* Список ссылок первый */
+    .nav-table { order: 2; } /* Таблица вторая */
+    .nav-form  { order: 3; } /* Форма третья */
 
-    /* Порядок БЛОКОВ на ПК (Ссылки первые) */
-    .section-links { order: 1; }
-    .section-table { order: 2; }
+    /* Порядок БЛОКОВ КОНТЕНТА на ПК */
+    .section-links { order: 1; } /* Список ссылок первый */
+    .section-table { order: 2; } /* Таблица вторая */
 
     input[type="text"],
     input[type="tel"],
